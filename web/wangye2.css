@@ -1,0 +1,151 @@
+*
+{
+    margin:0;
+    padding: 0;
+}
+#mediu
+{
+    width: 1000px;
+    height: 4558px;
+    margin: 0 auto;
+    border: 2px red solid;
+}
+#mediu div.daohang
+{
+    width: 1000px;
+    height: 100px;
+    border: 1px white solid;
+}
+#mediu div.daohang img
+{
+    float: left;
+}
+#mediu div.daohang input.sousuo
+{
+    border: 3px red solid;
+    height: 40px;
+    margin-top: 20px;
+    font-size: 20px;
+    float: left;
+}
+#mediu div.daohang a div.sou
+{
+    width:80px;
+    height:40px;
+    margin-right: 70px;
+    margin-top: 18px;
+    color: white;
+    padding-left: 10px;
+    padding-top: 10px;
+    background-color: red;
+    float: right;
+}
+#mediu div.daohang a div.sou:hover
+{
+    color: black;
+}
+#mediu div.daohang div.lianjie
+{
+    width: 900px;
+    height: 24px;
+    margin-left: 100px;
+    margin-top: 73px;
+}
+#mediu div.daohang div.lianjie ul
+{
+    list-style: none;
+}
+#mediu div.daohang div.lianjie ul li
+{
+    display: block;
+    width: 40px;
+    height: 18px;
+    float: left;
+    color:black;
+    font-size: 12px;
+    margin-left: 2px;
+}
+#mediu div.daohang div.lianjie ul li:hover
+{
+    color: red;
+}/*导航条*/
+#mediu div.zhuti
+{
+    width: 1000px;
+    height: 4250px;
+    border-top: 2px red solid;
+}
+#mediu div.zhuti div.shangping
+{
+    width: 290px;
+    height: 400px;
+    border: 2px red solid;
+    margin-left: 25px;
+    margin-top: 20px;
+    float: left;
+}
+#mediu div.zhuti a:link
+{
+    text-decoration: none;
+}
+#mediu div.zhuti div.shangping div.zhushi
+{
+    width: 288px;
+    height: 114px;
+}
+#mediu div.zhuti div.shangping div.zhushi ul
+{
+    list-style: none;
+}
+#mediu div.zhuti div.shangping div.zhushi ul li
+{
+    margin-top: 5px;
+}
+#mediu div.zhuti div.shangping div.zhushi ul a li.lianjie
+{
+    color: #B2B3AD;
+    float: left;
+}
+#mediu div.zhuti div.shangping div.zhushi ul a li.lianjie:hover
+{
+    color: red;
+}
+#mediu div.zhuti div.shangping div.zhushi ul li.goumai
+{
+    color: #B2B3AD;
+    float: right;
+}/*商品栏*/
+
+
+#xiaodao2
+{
+    width: 1000px;
+    height: 200px;
+    margin-top: 5000px;
+    background-color: black;
+}
+#xiaodao2 p a
+{
+    display: block;
+    color: white;
+    width: 100px;
+    float: left;
+    height: 20px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+#xiaodao2 p a:link
+{
+    text-decoration: none;
+}
+#xiaodao2 p a:hover
+{
+    color: yellow;
+    background-color: #960103;
+
+}
+#xiaodao2 pre
+{
+    clear: left;
+    color: wheat;
+}/*下导航条*/
