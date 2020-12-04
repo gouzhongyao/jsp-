@@ -1,15 +1,12 @@
 package dao;
 
 import db.DBConnection;
+import model.Admin;
 import model.Contactfushi;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 public class ContactDaoImpl implements ContactDao{
-
 
     @Override
     public List<Contactfushi> getAllContactfushis() {
@@ -42,8 +39,71 @@ public class ContactDaoImpl implements ContactDao{
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
         return null;
-
     }
+
+    @Override
+    public Admin getAdmin(String account, String password) {
+        try {
+            DBConnection db = new DBConnection();
+            Connection con = db.getConnection();
+            PreparedStatement pst = con.prepareStatement("select * from yh where y_name=? && mm=?");
+            pst.setString(1, account);
+            pst.setString(2, password);
+            ResultSet rs = pst.executeQuery();
+            if(rs.next()){
+                Admin admin = new Admin();
+                admin.setY_id(rs.getInt("y_id"));
+                admin.setY_name(rs.getString("y_name"));
+                admin.setY_name(rs.getString("mm"));
+                admin.setY_name(rs.getString("sjh"));
+                admin.setZhye(rs.getInt("zhye"));
+                rs.close();
+                pst.close();
+                con.close();
+                return admin;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+    public void addContact(Admin admin) {
+        try {
+            // 获取连接
+            DBConnection db = new DBConnection();
+            Connection con = db.getConnection();
+            // 执行SQL语句
+            PreparedStatement pst = con.prepareStatement("insert into yh(y_name ,mm, sjh, zhye) values(?,?,?,?)");
+            pst.setString(1,admin.getY_name());
+            pst.setString(2,admin.getMm());
+            pst.setString(3,admin.getSjh());
+            pst.setInt(4, admin.getZhye());
+            pst.executeUpdate();
+            pst.close();
+            con.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public int byAdmin(String y_name) {
+
+        System.out.println(y_name);
+        try {
+            DBConnection db = new DBConnection();
+            Connection con = db.getConnection();
+            PreparedStatement pst = con.prepareStatement("select * from yh where y_name=?");
+            pst.setString(1, y_name);
+            ResultSet rs = pst.executeQuery();
+            if(rs.next()){
+               return 1;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
 }
